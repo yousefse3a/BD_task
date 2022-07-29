@@ -1,0 +1,11 @@
+1. Which drink has the highest calories from the dataset ?
+
+SELECT MAX(Calories) ,Beverage FROM drinkmenu;
+
+2. What is the average calorie amount for each drink category ?
+
+SELECT AVG(Calories),Beverage_category from drinkmenu GROUP BY Beverage_category;
+
+3. Which drinks have below average calorie amount ?
+
+SELECT Calories, Beverage FROM drinkmenu WHERE Calories <(SELECT AVG(Calories)FROM drinkmenu);
